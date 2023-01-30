@@ -5,8 +5,104 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:RAA_Level2"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-            
+             d:DesignHeight="487" d:DesignWidth="650"
+             Icon="/RAA_Level2;component/Resources/Blue_16.png" 
+             Title="Revit Add-In Academy"
+             Background="Transparent"
+             AllowsTransparency="True"
+             WindowStyle="SingleBorderWindow"
+             WindowStartupLocation="CenterScreen"
+             >
+    <Grid Margin="0,0,20,20" Background="#FFF0F0F0">
+        <!--
+        <Border BorderBrush="Gray"           
+            BorderThickness="0,0,2,2"
+            CornerRadius="10"
+            Background="Beige">
+            //Create space between shadow and the next border
+            <Border BorderBrush="Transparent"
+              BorderThickness="5"
+              CornerRadius="10">
+                //The inner border
+                <Border BorderBrush="Black"
+                    BorderThickness="1.5"
+                    CornerRadius="10">                    
+                </Border>
+            </Border>
+        </Border>
+
+             Margin="0,0,55,55"
+             BorderThickness="2,2,2,2" 
+             BorderBrush="DarkSlateGray"
+             Background="Transparent"
+             Foreground="#FFF0F0F0"
+        
+        <Grid.Effect>
+            <DropShadowEffect BlurRadius="20" Direction="-90"
+                              RenderingBias="Quality"
+                              ShadowDepth="10"/>
+        </Grid.Effect>
+       
+        <Border CornerRadius="20"></Border>           
+-->
+
+            <Grid.RowDefinitions>
+                <!-- <RowDefinition Height="15"/> Margins for Title -->
+                <RowDefinition Height="45"/>
+                <!-- Project Setup -->
+                <RowDefinition Height="15"/>
+                <!-- Blank -->
+                <RowDefinition Height="28"/>
+                <!-- Select Setup File -->
+                <RowDefinition Height="5"/>
+                <!-- Blank -->
+                <RowDefinition Height="28"/>
+                <!-- File Input box, Select Button -->
+                <RowDefinition Height="5"/>
+                <!-- Blank -->
+                <RowDefinition Height="28"/>
+                <!-- Select Units -->
+                <RowDefinition Height="28"/>
+                <!-- Radio Imperial or Metric -->
+                <RowDefinition Height="5"/>
+                <!-- Blank -->
+                <RowDefinition Height="28"/>
+                <!-- Select Views to Create: -->
+                <RowDefinition Height="28"/>
+                <!-- Checkbox, Floor Plans -->
+                <RowDefinition Height="5"/>
+                <!-- Blank -->
+                <RowDefinition Height="28"/>
+                <!-- Checkbox, Ceiling Plans -->
+                <RowDefinition Height="5"/>
+                <!-- Blank -->
+                <RowDefinition Height="28"/>
+                <!-- OK Button, Cancel Button -->
+                <RowDefinition Height="5"/>
+                <!-- Blank -->
+                <RowDefinition Height="28"/>
+                <!-- Border -->
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="15"/>
+                <!-- Left Margins-->
+                <ColumnDefinition Width="200"/>
+                <!-- Main Left Justified-->
+                <ColumnDefinition Width="*"/>
+                <!-- Flexible -->
+                <ColumnDefinition Width="130"/>
+                <!-- OK Button -->
+                <ColumnDefinition Width="20"/>
+                <!-- Spacer -->
+                <ColumnDefinition Width="130"/>
+                <!-- Right Justified Select & Cancel Button -->
+            </Grid.ColumnDefinitions>
+
+            <Label Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="5" 
+               HorizontalAlignment="Left" VerticalAlignment="Center" 
+               FontSize="25" FontWeight="Bold">Project Setup</Label>
+            <Label Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="5" ></Label>
+            <Label Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="5" >Select Setup CSV File:</Label>
+
     </Grid>
 </Window>
