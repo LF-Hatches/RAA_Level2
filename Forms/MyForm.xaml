@@ -5,12 +5,8 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:RAA_Level2"
              mc:Ignorable="d" 
-             d:DesignHeight="380" d:DesignWidth="500"
-             Icon="/RAA_Level2;component/Resources/Blue_16.png" 
+             d:DesignHeight="350" d:DesignWidth="500"
              Title="Revit Add-In Academy"
-             Background="Transparent"
-             AllowsTransparency="True"
-             WindowStyle="SingleBorderWindow"
              WindowStartupLocation="CenterScreen"
              >
     <Grid Margin="0,0,0,0" Background="#FFF0F0F0">
@@ -49,7 +45,7 @@
         <Grid.RowDefinitions>
                 <RowDefinition Height="15"/> <!--Margins for Title -->
                 <RowDefinition Height="45"/> <!-- Project Setup -->
-                <RowDefinition Height="15"/> <!-- Blank -->
+                <RowDefinition Height="5"/> <!-- Blank -->
                 <RowDefinition Height="28"/> <!-- Select Setup File -->
                 <RowDefinition Height="5"/>  <!-- Blank -->
                 <RowDefinition Height="28"/> <!-- File Input box, Select Button -->
@@ -64,7 +60,7 @@
                 <RowDefinition Height="5"/>  <!-- Blank -->
                 <RowDefinition Height="28"/> <!-- OK Button, Cancel Button -->
                 <RowDefinition Height="5"/>  <!-- Blank -->
-                <RowDefinition Height="28"/> <!-- Border -->
+                <RowDefinition Height="15"/> <!-- Border -->
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="15"/>
@@ -75,9 +71,9 @@
                 <!-- Flexible -->
                 <ColumnDefinition Width="100"/>
                 <!-- OK Button -->
-                <ColumnDefinition Width="20"/>
+                <ColumnDefinition Width="10"/>
                 <!-- Spacer -->
-                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="110"/>
                 <!-- Right Justified Select & Cancel Button -->
         </Grid.ColumnDefinitions>
 
@@ -107,7 +103,7 @@
         <Label Grid.Row="10" Grid.Column="1" Grid.ColumnSpan="5" >Select Views to Create:</Label>
         <CheckBox Grid.Row="11" Grid.Column="1" x:Name="chbCheck1" Margin="8,0,10,0" VerticalContentAlignment="Center">Create Floor Plans</CheckBox>
         <CheckBox Grid.Row="13" Grid.Column="1" x:Name="chbCheck2" Margin="8,0,10,0" VerticalContentAlignment="Center">Create Reflected Ceiling Plans</CheckBox>
-        <StackPanel Grid.Row="15" Grid.Column="3" Grid.ColumnSpan="3" Orientation="Horizontal" HorizontalAlignment="Right">
+        <StackPanel Grid.Row="15" Grid.Column="1" Grid.ColumnSpan="5" Orientation="Horizontal" HorizontalAlignment="Right">
             <Button x:Name="btnOK" Width="100" Margin="0,0,10,0" Click="btnOK_Click">OK</Button>
             <Button x:Name="bntCancel" Width="100" Margin="0,0,10,0" Click="btnCancel_Click">Cancel</Button>
         </StackPanel>

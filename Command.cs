@@ -26,20 +26,20 @@ namespace RAA_Level2
             Application app = uiapp.Application;
             Document doc = uidoc.Document;
 
-            // put any code needed for the form here
+            // step 1: put any code needed for the form here
 
-            // open form
+            // step 2: open form
             MyForm currentForm = new MyForm()
             {
-                Width = 800,
-                Height = 450,
+                Width = 350,
+                Height = 500,
                 WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen,
                 Topmost = true,
             };
 
             currentForm.ShowDialog();
 
-            // get form data and do something
+            // step 3: get form data and do something
 
             return Result.Succeeded;
         }
