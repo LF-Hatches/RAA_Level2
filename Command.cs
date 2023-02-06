@@ -31,8 +31,8 @@ namespace RAA_Level2
             // step 2: open form
             MyForm currentForm = new MyForm()
             {
-                Width = 350,
-                Height = 500,
+                Width = 500,
+                Height = 345,
                 WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen,
                 Topmost = true,
             };
