@@ -5,22 +5,14 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:RAA_Level2"
              mc:Ignorable="d" 
-             d:DesignHeight="345" d:DesignWidth="500" 
+             d:DesignHeight="360" d:DesignWidth="500" 
              Background="DimGray"
-             Title="Revit Add-In Academy: Project Setup" Height="45" ResizeMode="NoResize"
+             Title="Revit Add-In Academy: Project Setup" ResizeMode="CanResizeWithGrip"
              WindowStartupLocation="CenterScreen"
              >
     <Border BorderThickness="2" BorderBrush="DimGray" CornerRadius="0,0,0,0" Background="#FFF0F0F0" Margin="0,0,0,15">
 
         <Grid Margin="10,10,10,10" Background="#FFF0F0F0">
-            <!--
-        <Grid.Effect>
-            <DropShadowEffect BlurRadius="20" Direction="-90"
-                              RenderingBias="Quality"
-                              ShadowDepth="10"/>
-        </Grid.Effect>
-        -->
-
             <Grid.RowDefinitions>
                 <RowDefinition Height="5"/>
                 <!--Margins for Title -->
@@ -44,16 +36,9 @@
                 <!-- Blank -->
                 <RowDefinition Height="28"/>
                 <!-- Select Views to Create: -->
-                <RowDefinition Height="20"/>
+                <RowDefinition Height="60"/>
                 <!-- Checkbox, Floor Plans -->
-                <RowDefinition Height="5"/>
-                <!-- Blank -->
-                <RowDefinition Height="20"/>
                 <!-- Checkbox, Ceiling Plans -->
-                <RowDefinition Height="5"/>
-                <!-- Blank -->
-                <RowDefinition Height="10"/>
-                <!-- Space -->
                 <RowDefinition Height="5"/>
                 <!-- Blank -->
                 <RowDefinition Height="28"/>
@@ -64,22 +49,22 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="15"/>
                 <!-- Left Margins-->
-                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="180"/>
                 <!-- Main Left Justified-->
                 <ColumnDefinition Width="*"/>
                 <!-- Flexible -->
-                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="80"/>
                 <!-- OK Button -->
                 <ColumnDefinition Width="10"/>
                 <!-- Spacer -->
-                <ColumnDefinition Width="110"/>
+                <ColumnDefinition Width="100"/>
                 <!-- Right Justified Select & Cancel Button -->
             </Grid.ColumnDefinitions>
             <Border Grid.Row="1" Grid.ColumnSpan="6" Grid.RowSpan="1" Width="250" HorizontalAlignment="Left"
                 BorderThickness="0,0,0,1" BorderBrush="DimGray" CornerRadius="10,10,0,0"  Margin="0,0,0,0"/>
             <Label Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="5" 
                HorizontalAlignment="Left" VerticalAlignment="Center" 
-               FontSize="20" FontWeight="Bold" Margin="-10,-8,0,0">Project Setup</Label>
+               FontSize="20" FontWeight="Bold" Margin="-10,-18,0,0">Project Setup</Label>
             <Label Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="5" ></Label>
 
 
@@ -87,10 +72,10 @@
             <Grid Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="5">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="120"/>
+                    <ColumnDefinition Width="110"/>
                 </Grid.ColumnDefinitions>
                 <TextBox x:Name="tbxFile" Grid.Column="0" Text="Browse to file location" HorizontalAlignment="Stretch" Margin="8,0,0,0" VerticalAlignment="Stretch" VerticalContentAlignment="Top" Padding="5,4,0,0"/>
-                <Button x:Name="btnSelect" Content="Select" Grid.Column="1" Width="100" Margin="10,0,10,0" HorizontalAlignment="Right" Click="btnSelect_Click"/>
+                <Button x:Name="btnSelect" Content="Select" Grid.Column="1" Width="100" Margin="10,0,0,0" HorizontalAlignment="Right" Click="btnSelect_Click"/>
             </Grid>
             <Label Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="5" >Select Units:</Label>
             <Grid Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="2">
@@ -98,19 +83,22 @@
                     <ColumnDefinition Width=".5*"/>
                     <ColumnDefinition Width=".5*"/>
                 </Grid.ColumnDefinitions>
-                <RadioButton x:Name="rb1" Grid.Column="0" Margin="8,0,10,0" GroupName="Group1" IsChecked="True" VerticalContentAlignment="Center" HorizontalContentAlignment="Left">Imperial</RadioButton>
-                <RadioButton x:Name="rb2" Grid.Column="1" Margin="8,0,10,0" GroupName="Group1" VerticalContentAlignment="Center">Metric</RadioButton>
+                <RadioButton x:Name="rbImperial" Grid.Column="0" Margin="8,0,10,0" GroupName="Group1" IsChecked="True" VerticalContentAlignment="Center" HorizontalContentAlignment="Left">Imperial (US)</RadioButton>
+                <RadioButton x:Name="rbMetric" Grid.Column="1" Margin="8,0,10,0" GroupName="Group1" VerticalContentAlignment="Center">Metric</RadioButton>
             </Grid>
 
-            <Label Grid.Row="10" Grid.Column="1" Grid.ColumnSpan="5" >Select Items to Create:</Label>
-            <CheckBox Grid.Row="11" Grid.Column="1" x:Name="chbCheck1" Margin="8,0,10,0" VerticalContentAlignment="Center">Floor Plans</CheckBox>
-            <CheckBox Grid.Row="13" Grid.Column="1" x:Name="chbCheck2" Margin="8,0,10,0" VerticalContentAlignment="Center">Reflected Ceiling Plans</CheckBox>
-            <CheckBox Grid.Row="11" Grid.Column="2" x:Name="chbCheck3" Grid.ColumnSpan="4" Margin="0,0,10,0" VerticalContentAlignment="Center">Floor Plan Sheets</CheckBox>
-            <CheckBox Grid.Row="13" Grid.Column="2" x:Name="chbCheck4" Grid.ColumnSpan="4" Margin="0,0,10,0" VerticalContentAlignment="Center">RCP Sheets</CheckBox>
-
-            <StackPanel Grid.Row="17" Grid.Column="1" Grid.ColumnSpan="5" Orientation="Horizontal" HorizontalAlignment="Right">
-                <Button x:Name="btnOK" Width="100" Margin="0,0,10,0" Click="btnOK_Click">OK</Button>
-                <Button x:Name="bntCancel" Width="100" Margin="0,0,10,0" Click="btnCancel_Click">Cancel</Button>
+            <Label Grid.Row="10" Grid.Column="1" Grid.ColumnSpan="5" >Select Views and Sheets to Create:</Label>
+            <StackPanel Orientation="Vertical" Grid.Row="11" Grid.Column="1">
+                <CheckBox x:Name="chbCheck1" Margin="8,0,10,5" VerticalContentAlignment="Center" Content=" Floor Plans" IsChecked="True"/>
+                <CheckBox x:Name="chbCheck2" Margin="8,0,10,5" VerticalContentAlignment="Center" Content=" Reflected Ceiling Plans" IsChecked="True"/>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" Grid.Row="11" Grid.Column="2" Grid.ColumnSpan="2">
+                <CheckBox x:Name="chbCheck3" Grid.ColumnSpan="4" Margin="0,0,10,5" VerticalContentAlignment="Center" Content=" Plan Sheets"/>
+                <CheckBox x:Name="chbCheck4" Grid.ColumnSpan="4" Margin="0,0,10,5" VerticalContentAlignment="Center" Content=" RCP Sheets"/>
+            </StackPanel>
+            <StackPanel Grid.Row="13" Grid.Column="3" Grid.ColumnSpan="3" Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button x:Name="btnOK" Width="80" Margin="0,0,10,0" Click="btnOK_Click">OK</Button>
+                <Button x:Name="bntCancel" Width="100" Margin="0,0,0,0"  HorizontalAlignment="Right" Click="btnCancel_Click">Cancel</Button>
             </StackPanel>
         </Grid>
     </Border>

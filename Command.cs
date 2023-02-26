@@ -32,10 +32,15 @@ namespace RAA_Level2
             MyForm currentForm = new MyForm()
             {
                 Width = 500,
-                Height = 345,
+                Height = 360,
                 WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen,
                 Topmost = true,
             };
+
+            if (currentForm.ShowDialog() == false)
+            {
+                return Result.Cancelled;
+            }
 
             currentForm.ShowDialog();
 
