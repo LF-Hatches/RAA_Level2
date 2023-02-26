@@ -12,7 +12,11 @@ Please don’t share/distribute/alter this github without author’s permission.
 ## Items in development:
 
 We've been developing WPF - Windows Forms/Dialogue Boxes
+
+
 Challenge 1: 
+
+
 Create an add-in that will help you set up a Revit project using data from a CSV file. 
 The add-in will launch a WPF form that prompts the user to select a CSV file as well as some other options.
 After the user clicks "OK", the add-in will read the data from the CSV file and create the specified levels using the unit type the user selected. 
@@ -20,6 +24,8 @@ Once the levels are created, the add-in will create floor plans and ceiling plan
 Once complete, the add-in will alert the user to how many levels and views were created.
 
 Challenge 2: 
+
+
 View Renumberer
 When the user clicks the "Select" button, the form will close and prompt the user to select the viewports in order. 
 When finished, the user will click the "Escape" key. The form will then re-open and display the Element Ids of the selected views in the ListBox. 
