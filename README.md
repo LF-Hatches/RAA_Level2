@@ -39,9 +39,13 @@ Display a TaskDialog alerting the user how many views were renumbered.
 
 Misc:
 > Want to take PyRevit Patternmaker code and pull it into this world.
+> 
 > Want to use Icon8 icons 96x96
+> 
 > Bonus lessons: upgrade to 2023, use events to manipulate controls. 
+> 
 > Other items: tabs in forms.
+> 
 > Migrate campus tools to RAA page
 > > pyRevit-Master\extensions\pyRevitTools.extension\pyRevit.tab\Modify.panel\edit1.stack\Patterns.splitpushbutton\Make Pattern.pushbutton
 > >
