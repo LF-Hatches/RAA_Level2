@@ -23,6 +23,7 @@ After the user clicks "OK", the add-in will read the data from the CSV file and 
 Once the levels are created, the add-in will create floor plans and ceiling plans if the user checked those options in the form. 
 Once complete, the add-in will alert the user to how many levels and views were created.
 
+
 Challenge 2: 
 
 
@@ -34,7 +35,7 @@ Upon clicking OK, the add-in will renumber the views on the sheet in the order t
 Display a TaskDialog alerting the user how many views were renumbered. 
 
 
-## Items in development:
+## Upcoming Questions:
 
 Misc:
 > Want to take PyRevit Patternmaker code and pull it into this world.
@@ -42,7 +43,10 @@ Misc:
 > Bonus lessons: upgrade to 2023, use events to manipulate controls. 
 > Other items: tabs in forms.
 > Migrate campus tools to RAA page
+> > pyRevit-Master\extensions\pyRevitTools.extension\pyRevit.tab\Modify.panel\edit1.stack\Patterns.splitpushbutton\Make Pattern.pushbutton
+> >
 
+## Other Goals/Questions:
 Other Goals for toolbar:
 
 Be able to load a file path once; have it save and register “yes I have an excel file path”
