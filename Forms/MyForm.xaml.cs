@@ -32,8 +32,10 @@ namespace RAA_Level2
         private void btnSelect_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog openFile = new OpenFileDialog();
-            openFile.InitialDirectory = @"C:\";
-            openFile.Filter = "csv files (*.csv)|*.csv";
+            openFile.Multiselect = false;
+            //openFile.InitialDirectory = @"C:\";
+            openFile.RestoreDirectory = true;
+            openFile.Filter = "csv file (*.csv)|*.csv";
 
             if (openFile.ShowDialog() == true)
             {
@@ -76,10 +78,10 @@ namespace RAA_Level2
         }
         public string GetGroup1()
         {
-            if (rb1.IsChecked == true)
-                return rb1.Content.ToString();
-            else if (rb2.IsChecked == true)
-                return rb2.Content.ToString();
+            if (rbImperial.IsChecked == true)
+                return rbImperial.Content.ToString();
+            else if (rbMetric.IsChecked == true)
+                return rbMetric.Content.ToString();
             else
                 return "";
         }
