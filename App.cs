@@ -20,7 +20,7 @@ namespace RAA_Level2
             // 1. Create ribbon tab
             try
             {
-                app.CreateRibbonTab("Revit Add-in Academy");
+                app.CreateRibbonTab("RAA");
             }
             catch (Exception)
             {
@@ -28,10 +28,10 @@ namespace RAA_Level2
             }
 
             // 2. Create ribbon panel 
-            RibbonPanel panel = Utils.CreateRibbonPanel(app, "Revit Add-in Academy", "Revit Tools");
+            RibbonPanel panel = Utils.CreateRibbonPanel(app, "RAA", "Revit Tools");
 
             // 3. Create button data instances
-            ButtonDataClass myButtonData = new ButtonDataClass("MyButton", "My Button", Command.GetMethod(), Properties.Resources.Create_32, Properties.Resources.Create_16, "This is a tooltip");
+            ButtonDataClass myButtonData = new ButtonDataClass("MyButton", "My Button", Command.GetMethod(), Properties.Resources.Excel_32, Properties.Resources.Create_16, "This is a tooltip");
 
             // 4. Create buttons
             PushButton myButton = panel.AddItem(myButtonData.Data) as PushButton;
