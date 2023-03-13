@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:RAA_Level2"
              mc:Ignorable="d" 
-             d:DesignHeight="360" d:DesignWidth="500" 
+             d:DesignHeight="380" d:DesignWidth="500" 
              Background="DimGray"
              Title="Revit Add-In Academy: Project Setup" ResizeMode="CanResizeWithGrip"
              WindowStartupLocation="CenterScreen"
@@ -68,7 +68,7 @@
             <Label Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="5" ></Label>
 
 
-            <Label Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="5" >Select Setup CSV File:</Label>
+            <Label Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="5">Select Setup CSV File:</Label>
             <Grid Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="5">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
@@ -78,15 +78,13 @@
                 <Button x:Name="btnSelect" Content="Select" Grid.Column="1" Width="100" Margin="10,0,0,0" HorizontalAlignment="Right" Click="btnSelect_Click"/>
             </Grid>
             <Label Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="5" >Select Units:</Label>
-            <Grid Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="2">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width=".5*"/>
-                    <ColumnDefinition Width=".5*"/>
-                </Grid.ColumnDefinitions>
-                <RadioButton x:Name="rbImperial" Grid.Column="0" Margin="8,0,10,0" GroupName="Group1" IsChecked="True" VerticalContentAlignment="Center" HorizontalContentAlignment="Left">Imperial (US)</RadioButton>
-                <RadioButton x:Name="rbMetric" Grid.Column="1" Margin="8,0,10,0" GroupName="Group1" VerticalContentAlignment="Center">Metric</RadioButton>
-            </Grid>
-
+            <StackPanel Orientation="Vertical" Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="5">
+                <RadioButton x:Name="rbImperial" Margin="8,0,10,0" GroupName="Group1" IsChecked="True" VerticalContentAlignment="Center" HorizontalContentAlignment="Left">Imperial (US)</RadioButton>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" Grid.Row="8" Grid.Column="2" Grid.ColumnSpan="4">
+                <RadioButton x:Name="rbMetric" Margin="0,0,0,0" GroupName="Group1" VerticalContentAlignment="Center">Metric</RadioButton>
+            </StackPanel>
+            
             <Label Grid.Row="10" Grid.Column="1" Grid.ColumnSpan="5" >Select Views and Sheets to Create:</Label>
             <StackPanel Orientation="Vertical" Grid.Row="11" Grid.Column="1">
                 <CheckBox x:Name="chbCheck1" Margin="8,0,10,5" VerticalContentAlignment="Center" Content=" Floor Plans" IsChecked="True"/>
