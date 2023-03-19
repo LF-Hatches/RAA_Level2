@@ -1,5 +1,6 @@
 ﻿
 using Autodesk.Revit.DB.Electrical;
+using Autodesk.Revit.UI;
 using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
@@ -31,19 +32,19 @@ namespace RAA_Level2
 
         private void btnSelect_Click(object sender, RoutedEventArgs e)
         {
-            OpenFileDialog openFile = new OpenFileDialog();
-            openFile.Multiselect = false;
-            //openFile.InitialDirectory = @"C:\";
-            openFile.RestoreDirectory = true;
-            openFile.Filter = "csv file (*.csv)|*.csv";
+            OpenFileDialog selectFile = new OpenFileDialog();
+            selectFile.Multiselect = false;
+            //selectFile.InitialDirectory = @"C:\";
+            selectFile.RestoreDirectory = true;
+            selectFile.Filter = "csv file (*.csv)|*.csv";
 
-            if (openFile.ShowDialog() == true)
+            if (selectFile.ShowDialog() == true)
             {
-                tbxFile.Text = openFile.FileName;
+                tbxSelect.Text = selectFile.FileName;
             }
             else
             {
-                tbxFile.Text = "";
+                tbxSelect.Text = "";
             }
         }
 
@@ -58,33 +59,56 @@ namespace RAA_Level2
             this.DialogResult = false;
             this.Close();
         }
-        public string GetTextBoxValue()
+
+        internal string GetFilePath()
         {
-            return tbxFile.Text;
-        }
-        public bool GetCheckbox1()
-        {
-            if (chbCheck1.IsChecked == true)
-                return true;
+            if (tbxSelect.Text != "")
+                return tbxSelect.Text;
             else
-                return false;
-        }
-        public bool GetCheckbox2()
-        {
-            if (chbCheck2.IsChecked == true)
-                return true;
-            else
-                return false;
-        }
-        public string GetGroup1()
-        {
-            if (rbImperial.IsChecked == true)
-                return rbImperial.Content.ToString();
-            else if (rbMetric.IsChecked == true)
-                return rbMetric.Content.ToString();
-            else
-                return "";
+                TaskDialog.Show("Error", "Please select a file!");
+
+            return null;
         }
 
+        internal string GetUnits()
+        {
+            if (rbImperial.IsChecked == true)
+            {
+                return "imperial";
+            }
+
+            return "metric";
+        }
+
+        internal bool CreateFloorPlan()
+        {
+            if (chbFloorPlan.IsChecked == true)
+                return true;
+
+            return false;
+        }
+
+        internal bool CreateCeilingPlan()
+        {
+            if (chbCeilingPlan.IsChecked == true)
+                return true;
+
+            return false;
+        }
+        internal bool CreateCeilingPlanSheets()
+        {
+            if (chbCeilingPlanSheets.IsChecked == true)
+                return true;
+
+            return false;
+        }
+
+        internal bool CreateFloorPlanSheets()
+        {
+            if (chbFloorPlanSheets.IsChecked == true)
+                return true;
+
+            return false;
+        }
     }
 }
