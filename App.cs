@@ -32,8 +32,8 @@ namespace RAA_Level2
 
             // 3. Create button data instances
             ButtonDataClass myButtonData = new ButtonDataClass("btn_RAA_Module1", "CSV Setup", Command.GetMethod(), Properties.Resources.Excel_32, Properties.Resources.Create_16, "This is a tooltip");
-            ButtonDataClass myButtonData2 = new ButtonDataClass("btn_RAA_Module1Bonus", "Excel Setup", Command.GetMethod(), Properties.Resources.Excel_32, Properties.Resources.Create_16, "This is a tooltip");
-            ButtonDataClass myButtonData3 = new ButtonDataClass("btn_RAA_MaterialMaker", "Make Pattern", Command.GetMethod(), Properties.Resources.Create_32, Properties.Resources.Create_16, "This is a tooltip");
+            ButtonDataClass myButtonData2 = new ButtonDataClass("btn_RAA_Module1Bonus", "Excel Setup", Command2.GetMethod(), Properties.Resources.Excel_32, Properties.Resources.Create_16, "This is a tooltip");
+            ButtonDataClass myButtonData3 = new ButtonDataClass("btn_RAA_MaterialMaker", "Make Pattern", CommandMaterial.GetMethod(), Properties.Resources.Create_32, Properties.Resources.Create_16, "This is a tooltip");
 
             // 4. Create buttons
             PushButton myButton = panel.AddItem(myButtonData.Data) as PushButton;

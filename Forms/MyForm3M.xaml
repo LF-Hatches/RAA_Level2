@@ -1,0 +1,123 @@
+﻿<Window x:Class="RAA_Level2.MyForm3M"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:RAA_Level2"
+             mc:Ignorable="d" 
+             d:DesignHeight="480" d:DesignWidth="500" 
+             Background="DimGray"
+             Title="Revit Add-In Academy: Project Setup" ResizeMode="CanResizeWithGrip"
+             WindowStartupLocation="CenterScreen"
+             >
+    <Border BorderThickness="2" BorderBrush="DimGray" CornerRadius="0,0,0,0" Background="#FFF0F0F0" Margin="0,0,0,15">
+
+        <Grid Margin="10,10,10,10" Background="#FFF0F0F0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="5"/>
+                <!--Margins for Title -->
+                <RowDefinition Height="30"/>
+                <!-- Project Title -->
+                <RowDefinition Height="5"/>
+                <!-- Blank -->
+                <RowDefinition Height="28"/>
+                <!-- Input Material Name -->
+                <RowDefinition Height="5"/>
+                <!-- Blank -->
+                <RowDefinition Height="28"/>
+                <!-- Material Name Input box -->
+                <RowDefinition Height="5"/>
+                <!-- Blank -->
+                <RowDefinition Height="28"/>
+                <!-- Select Pattern Type -->
+                <RowDefinition Height="28"/>
+                <!-- Radio Detail or Model-->
+                <RowDefinition Height="5"/>
+                <!-- Blank -->
+                <RowDefinition Height="28"/>
+                <!-- Setup Values on Display: -->
+                <RowDefinition Height="60"/>
+                <!-- Checkbox, Flip Horizontally -->
+                <!-- Checkbox, Flip Vertically -->
+                <RowDefinition Height="5"/>
+                <!-- Blank -->
+                <RowDefinition Height="28"/>
+                <RowDefinition Height="80"/>
+                <!-- Captured View Scale -->
+                <!-- Scale Multiplier -->
+                <!-- Rotation (degrees) -->
+                <RowDefinition Height="15"/>
+                <!-- Blank -->
+                <RowDefinition Height="28"/>
+                <!-- Select Linework Button - Cancel Button -->
+                <RowDefinition Height="0"/>
+                <!-- Border -->
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="15"/>
+                <!-- Left Margins-->
+                <ColumnDefinition Width="180"/>
+                <!-- Main Left Justified-->
+                <ColumnDefinition Width="*"/>
+                <!-- Flexible -->
+                <ColumnDefinition Width="80"/>
+                <!-- OK Button -->
+                <ColumnDefinition Width="10"/>
+                <!-- Spacer -->
+                <ColumnDefinition Width="100"/>
+                <!-- Right Justified Select & Cancel Button -->
+            </Grid.ColumnDefinitions>
+            <Border Grid.Row="1" Grid.ColumnSpan="6" Grid.RowSpan="1" Width="250" HorizontalAlignment="Left"
+                BorderThickness="0,0,0,1" BorderBrush="DimGray" CornerRadius="10,10,0,0"  Margin="0,0,0,0"/>
+            <Label Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="5" 
+               HorizontalAlignment="Left" VerticalAlignment="Center" 
+               FontSize="20" FontWeight="Bold" Margin="-10,-18,0,0">Pattern Maker</Label>
+            <Label Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="5" ></Label>
+
+
+            <Label Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="5">Input Pattern Name:</Label>
+            <Grid Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="110"/>
+                </Grid.ColumnDefinitions>
+                <TextBox x:Name="tbxSelect" Grid.Column="0" Text="Combo Box Here" HorizontalAlignment="Stretch" Margin="8,0,0,0" VerticalAlignment="Stretch" VerticalContentAlignment="Top" Padding="5,4,0,0"/>
+                <Button x:Name="btnSelect" Content="Select" Grid.Column="1" Width="100" Margin="10,0,0,0" HorizontalAlignment="Right" Click="btnSelect_Click"/>
+            </Grid>
+            <Label Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="5" >Select Units:</Label>
+            <StackPanel Orientation="Vertical" Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="5">
+                <RadioButton x:Name="rbDetailPat" Margin="8,0,10,0" GroupName="Group1" IsChecked="False" VerticalContentAlignment="Center" HorizontalContentAlignment="Left">Detail Pattern (Annotation)</RadioButton>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" Grid.Row="8" Grid.Column="2" Grid.ColumnSpan="4">
+                <RadioButton x:Name="rbModelPat" Margin="0,0,0,0" GroupName="Group1"  IsChecked="True" VerticalContentAlignment="Center">Model Pattern (Actual Size)</RadioButton>
+            </StackPanel>
+
+            <Label Grid.Row="10" Grid.Column="1" Grid.ColumnSpan="5" >Select Options:</Label>
+            <StackPanel Orientation="Vertical" Grid.Row="11" Grid.Column="1">
+                <CheckBox x:Name="chbFilledRegion" Margin="8,0,10,5" VerticalContentAlignment="Center" Content=" Create Filled Region" IsChecked="True"/>
+                <CheckBox x:Name="chbResolution" Margin="8,0,10,5" VerticalContentAlignment="Center" Content=" Use Highest Resolution" IsChecked="True"/>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" Grid.Row="11" Grid.Column="2" Grid.ColumnSpan="2">
+                <CheckBox x:Name="chbFlipHorizontally" Grid.ColumnSpan="4" Margin="0,0,10,5" VerticalContentAlignment="Center" Content=" Flip Horizontally"/>
+                <CheckBox x:Name="chbFlipVertically" Grid.ColumnSpan="4" Margin="0,0,10,5" VerticalContentAlignment="Center" Content=" Flip Vertically"/>
+            </StackPanel>
+            <Label Grid.Row="13" Grid.Column="1" Grid.ColumnSpan="5" >Default Settings:</Label>
+            <StackPanel Orientation="Horizontal" Grid.Row="14"  Grid.Column="1" Grid.ColumnSpan="5">
+                <StackPanel Orientation="Vertical" Grid.Row="1" Width="180">
+                    <Label Grid.Row="1" Height="25" Margin="25,0,0,0" VerticalContentAlignment="Top" HorizontalAlignment="Left">Captured View Scale:</Label>
+                    <Label Grid.Row="2" Height="25" Margin="25,0,0,0" VerticalAlignment="Top" HorizontalAlignment="Left">Scale Multiplier:</Label>
+                    <Label Grid.Row="3" Height="25" Margin="25,0,0,0" VerticalAlignment="Top" HorizontalAlignment="Left">Rotation (degrees):</Label>
+                </StackPanel>
+                <StackPanel Orientation="Vertical"  Grid.Row="2" Width="180" HorizontalAlignment="Right">
+                    <TextBox Grid.Row="1" Height="23" Margin="0,2,0,2" x:Name="txbCapturedViewScale" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Text=" Report Scale Here "/>
+                    <TextBox Grid.Row="2" Height="23" Margin="0,2,0,2" x:Name="txbScaleMultiplier" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Text=" Input Scale Multiplier "/>
+                    <TextBox Grid.Row="3" Height="23" Margin="0,2,0,2" x:Name="txbRotation" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Text=" Input Rotation"/>
+                </StackPanel>
+             </StackPanel>
+            <StackPanel Grid.Row="16" Grid.Column="2" Grid.ColumnSpan="5" Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button x:Name="btnSelectLinework" Width="160" Margin="0,0,10,0" Click="btnSelectLinework_Click">Select Linework</Button>
+                <Button x:Name="bntCancel" Width="100" Margin="0,0,0,0"  HorizontalAlignment="Right" Click="btnCancel_Click">Cancel</Button>
+            </StackPanel>
+        </Grid>
+    </Border>
+</Window>

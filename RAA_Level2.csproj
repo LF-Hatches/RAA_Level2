@@ -58,7 +58,18 @@
   <ItemGroup>
     <Compile Include="App.cs" />
     <Compile Include="Classes\ButtonDataClass.cs" />
+    <Compile Include="CommandMaterial.cs" />
+    <Compile Include="Command2.cs" />
     <Compile Include="Command.cs" />
+    <Compile Include="Forms\MyForm_Renumber.xaml.cs">
+      <DependentUpon>MyForm_Renumber.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MyForm3M.xaml.cs">
+      <DependentUpon>MyForm3M.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MyForm2.xaml.cs">
+      <DependentUpon>MyForm2.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -99,6 +110,18 @@
     <Page Include="Forms\MyForm.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\MyForm_Renumber.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\MyForm3M.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\MyForm2.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
   <ItemGroup>
