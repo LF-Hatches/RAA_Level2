@@ -6,7 +6,7 @@
     <Assembly>RAA_Level2.dll</Assembly>
     <FullClassName>RAA_Level2.Command</FullClassName>
     <ClientId>c4298090-09e6-4f34-9b8e-0de7b361fe05</ClientId>
-    <VendorId>com.YOUR COMPANY NAME</VendorId>
+    <VendorId>com.ICON architecture</VendorId>
     <VendorDescription>YOUR COMPANY NAME, YOUR COMPANY URL</VendorDescription>
   </AddIn>
   <AddIn Type="Application">
