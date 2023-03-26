@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("YOUR COMPANY NAME")]
 [assembly: AssemblyProduct("RAA_Level2 Revit C# .NET Add-In")]
-[assembly: AssemblyCopyright("Copyright (C) 2023 by YOUR NAME, YOUR COMPANY")]
+[assembly: AssemblyCopyright("Copyright (C) 2023 by Liz Farrell, ICON architecture")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

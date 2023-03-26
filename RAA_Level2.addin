@@ -14,7 +14,7 @@
     <Assembly>RAA_Level2.dll</Assembly>
     <FullClassName>RAA_Level2.App</FullClassName>
     <ClientId>1ccdcb0f-9d30-4603-be02-8fbe6bc89f05</ClientId>
-    <VendorId>com.YOUR COMPANY NAME</VendorId>
+    <VendorId>com.ICON architecture</VendorId>
     <VendorDescription>YOUR COMPANY NAME, YOUR COMPANY URL</VendorDescription>
   </AddIn>
 </RevitAddIns>

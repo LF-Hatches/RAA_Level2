@@ -7,7 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="480" d:DesignWidth="500" 
              Background="DimGray"
-             Title="Revit Add-In Academy: Project Setup" ResizeMode="CanResizeWithGrip"
+             Title="Revit Add-In Academy: Project Tool" ResizeMode="CanResizeWithGrip"
              WindowStartupLocation="CenterScreen"
              >
     <Border BorderThickness="2" BorderBrush="DimGray" CornerRadius="0,0,0,0" Background="#FFF0F0F0" Margin="0,0,0,15">

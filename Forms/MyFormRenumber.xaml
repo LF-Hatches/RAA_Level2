@@ -1,4 +1,4 @@
-﻿<Window x:Class="RAA_Level2.MyForm_Renumber"
+﻿<Window x:Class="RAA_Level2.MyFormRenumber"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 

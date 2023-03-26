@@ -1,0 +1,103 @@
+﻿<Window x:Class="RAA_Level2.MyFormSheetMaker"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:RAA_Level2"
+             mc:Ignorable="d" 
+             d:DesignHeight="380" d:DesignWidth="500" 
+             Background="DimGray"
+             Title="Revit Add-In Academy: Project Setup" ResizeMode="CanResizeWithGrip"
+             WindowStartupLocation="CenterScreen"
+             >
+    <Border BorderThickness="2" BorderBrush="DimGray" CornerRadius="0,0,0,0" Background="#FFF0F0F0" Margin="0,0,0,15">
+
+        <Grid Margin="10,10,10,10" Background="#FFF0F0F0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="5"/>
+                <!--Margins for Title -->
+                <RowDefinition Height="30"/>
+                <!-- Project Setup -->
+                <RowDefinition Height="5"/>
+                <!-- Blank -->
+                <RowDefinition Height="28"/>
+                <!-- Select Setup File -->
+                <RowDefinition Height="5"/>
+                <!-- Blank -->
+                <RowDefinition Height="28"/>
+                <!-- File Input box, Select Button -->
+                <RowDefinition Height="5"/>
+                <!-- Blank -->
+                <RowDefinition Height="28"/>
+                <!-- Select Units -->
+                <RowDefinition Height="28"/>
+                <!-- Radio Imperial or Metric -->
+                <RowDefinition Height="5"/>
+                <!-- Blank -->
+                <RowDefinition Height="28"/>
+                <!-- Select Views to Create: -->
+                <RowDefinition Height="60"/>
+                <!-- Checkbox, Floor Plans -->
+                <!-- Checkbox, Ceiling Plans -->
+                <RowDefinition Height="5"/>
+                <!-- Blank -->
+                <RowDefinition Height="28"/>
+                <!-- OK Button, Cancel Button -->
+                <RowDefinition Height="0"/>
+                <!-- Border -->
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="15"/>
+                <!-- Left Margins-->
+                <ColumnDefinition Width="180"/>
+                <!-- Main Left Justified-->
+                <ColumnDefinition Width="*"/>
+                <!-- Flexible -->
+                <ColumnDefinition Width="80"/>
+                <!-- OK Button -->
+                <ColumnDefinition Width="10"/>
+                <!-- Spacer -->
+                <ColumnDefinition Width="100"/>
+                <!-- Right Justified Select & Cancel Button -->
+            </Grid.ColumnDefinitions>
+            <Border Grid.Row="1" Grid.ColumnSpan="6" Grid.RowSpan="1" Width="250" HorizontalAlignment="Left"
+                BorderThickness="0,0,0,1" BorderBrush="DimGray" CornerRadius="10,10,0,0"  Margin="0,0,0,0"/>
+            <Label Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="5" 
+               HorizontalAlignment="Left" VerticalAlignment="Center" 
+               FontSize="20" FontWeight="Bold" Margin="-10,-18,0,0">Sheetmaker Tool</Label>
+            <Label Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="5" ></Label>
+
+
+            <Label Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="5">Click 'Select' then pick views to renumber in order.</Label>
+            <Grid Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="110"/>
+                </Grid.ColumnDefinitions>
+                <TextBox x:Name="tbxSelect" Grid.Column="0" Text="Browse to file location" HorizontalAlignment="Stretch" Margin="8,0,0,0" VerticalAlignment="Stretch" VerticalContentAlignment="Top" Padding="5,4,0,0"/>
+                <Button x:Name="btnSelect" Content="Select" Grid.Column="1" Width="100" Margin="10,0,0,0" HorizontalAlignment="Right" Click="btnSelect_Click"/>
+            </Grid>
+            <Label Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="5" >Select Units:</Label>
+            <StackPanel Orientation="Vertical" Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="5">
+                <RadioButton x:Name="rbImperial" Margin="8,0,10,0" GroupName="Group1" IsChecked="True" VerticalContentAlignment="Center" HorizontalContentAlignment="Left">Imperial (US)</RadioButton>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" Grid.Row="8" Grid.Column="2" Grid.ColumnSpan="4">
+                <RadioButton x:Name="rbMetric" Margin="0,0,0,0" GroupName="Group1" VerticalContentAlignment="Center">Metric</RadioButton>
+            </StackPanel>
+            
+            <Label Grid.Row="10" Grid.Column="1" Grid.ColumnSpan="5" >Select Views and Sheets to Create:</Label>
+            <StackPanel Orientation="Vertical" Grid.Row="11" Grid.Column="1">
+                <CheckBox x:Name="chbFloorPlan" Margin="8,0,10,5" VerticalContentAlignment="Center" Content=" Floor Plans" IsChecked="True"/>
+                <CheckBox x:Name="chbCeilingPlan" Margin="8,0,10,5" VerticalContentAlignment="Center" Content=" Reflected Ceiling Plans" IsChecked="True"/>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" Grid.Row="11" Grid.Column="2" Grid.ColumnSpan="2">
+                <CheckBox x:Name="chbFloorPlanSheets" Grid.ColumnSpan="4" Margin="0,0,10,5" VerticalContentAlignment="Center" Content=" Plan Sheets"/>
+                <CheckBox x:Name="chbCeilingPlanSheets" Grid.ColumnSpan="4" Margin="0,0,10,5" VerticalContentAlignment="Center" Content=" RCP Sheets"/>
+            </StackPanel>
+            <StackPanel Grid.Row="13" Grid.Column="3" Grid.ColumnSpan="3" Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button x:Name="btnOK" Width="80" Margin="0,0,10,0" Click="btnOK_Click">OK</Button>
+                <Button x:Name="bntCancel" Width="100" Margin="0,0,0,0"  HorizontalAlignment="Right" Click="btnCancel_Click">Cancel</Button>
+            </StackPanel>
+        </Grid>
+    </Border>
+</Window>

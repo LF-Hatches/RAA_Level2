@@ -23,9 +23,9 @@ namespace RAA_Level2
     /// <summary>
     /// Interaction logic for Window.xaml
     /// </summary>
-    public partial class MyForm_Renumber : Window
+    public partial class MyFormSheetMaker : Window
     {
-        public MyForm_Renumber()
+        public MyFormSheetMaker()
         {
             InitializeComponent();
         }

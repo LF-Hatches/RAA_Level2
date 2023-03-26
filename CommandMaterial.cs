@@ -29,7 +29,7 @@ namespace RAA_Level2
             // step 1: no code needed for this form
 
             // step 2: open form
-            MyForm currentForm = new MyForm()
+            MyForm3M currentForm = new MyForm3M()
             {
                 Width = 500,
                 MinWidth = 500,
@@ -96,17 +96,7 @@ namespace RAA_Level2
                 currentLevel.Name = levelName;
 
                 // create views
-                if (currentForm.CreateFloorPlan() == true)
-                {
-                    ViewFamilyType planVFT = GetViewFamilyTypeByName(doc, "Floor Plan", ViewFamily.FloorPlan);
-                    ViewPlan currentPlan = ViewPlan.Create(doc, planVFT.Id, currentLevel.Id);
-                }
 
-                if (currentForm.CreateCeilingPlan() == true)
-                {
-                    ViewFamilyType ceilingPlanVFT = GetViewFamilyTypeByName(doc, "Ceiling Plan", ViewFamily.CeilingPlan);
-                    ViewPlan currentCeilingPlan = ViewPlan.Create(doc, ceilingPlanVFT.Id, currentLevel.Id);
-                }
 
                 // create sheets
                 /*

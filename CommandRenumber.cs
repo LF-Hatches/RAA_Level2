@@ -29,7 +29,7 @@ namespace RAA_Level2
             // step 1: no code needed for this form
 
             // step 2: open form
-            MyForm2 currentForm = new MyForm2()
+            MyFormRenumber currentForm = new MyFormRenumber()
             {
                 Width = 500,
                 MinWidth = 500,
